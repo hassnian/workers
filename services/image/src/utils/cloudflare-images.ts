@@ -62,6 +62,10 @@ type IpfsToCFI = CFImages & {
   path: string
 }
 
+export function getImageVariant(url: string, { width }: { width: string }) {
+  return url.replace('/public', '') + `/w=${width}`
+}
+
 export async function ipfsToCFI({
   token,
   gateway,
